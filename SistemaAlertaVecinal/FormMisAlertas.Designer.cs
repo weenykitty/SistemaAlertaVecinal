@@ -1,6 +1,6 @@
 ﻿namespace SistemaAlertaVecinal
 {
-    partial class FormMisReportes
+    partial class FormMisAlertas
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             lblTitulo = new Label();
-            dgvMisReportes = new DataGridView();
+            dgvMisAlertas = new DataGridView();
             clmTipo = new DataGridViewTextBoxColumn();
             clmDescripcion = new DataGridViewTextBoxColumn();
             clmDireccion = new DataGridViewTextBoxColumn();
@@ -40,7 +40,7 @@
             sistemaSeguridadBindingSource = new BindingSource(components);
             txtContenido = new TextBox();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvMisReportes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMisAlertas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)sistemaSeguridadBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -50,27 +50,27 @@
             lblTitulo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.Location = new Point(41, 18);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(131, 19);
+            lblTitulo.Size = new Size(115, 19);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "MIS REPORTES";
+            lblTitulo.Text = "MIS ALERTAS";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dgvMisReportes
+            // dgvMisAlertas
             // 
-            dgvMisReportes.AllowUserToAddRows = false;
-            dgvMisReportes.AllowUserToDeleteRows = false;
-            dgvMisReportes.AllowUserToResizeColumns = false;
-            dgvMisReportes.AllowUserToResizeRows = false;
-            dgvMisReportes.BackgroundColor = Color.White;
-            dgvMisReportes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMisReportes.Columns.AddRange(new DataGridViewColumn[] { clmTipo, clmDescripcion, clmDireccion, clmFecha, clmReportadoPor, clmZona });
-            dgvMisReportes.Location = new Point(12, 60);
-            dgvMisReportes.Name = "dgvMisReportes";
-            dgvMisReportes.ReadOnly = true;
-            dgvMisReportes.RowHeadersVisible = false;
-            dgvMisReportes.Size = new Size(1013, 317);
-            dgvMisReportes.TabIndex = 1;
-            dgvMisReportes.CellClick += dgvMisReportes_CellClick;
+            dgvMisAlertas.AllowUserToAddRows = false;
+            dgvMisAlertas.AllowUserToDeleteRows = false;
+            dgvMisAlertas.AllowUserToResizeColumns = false;
+            dgvMisAlertas.AllowUserToResizeRows = false;
+            dgvMisAlertas.BackgroundColor = Color.White;
+            dgvMisAlertas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMisAlertas.Columns.AddRange(new DataGridViewColumn[] { clmTipo, clmDescripcion, clmDireccion, clmFecha, clmReportadoPor, clmZona });
+            dgvMisAlertas.Location = new Point(12, 60);
+            dgvMisAlertas.Name = "dgvMisAlertas";
+            dgvMisAlertas.ReadOnly = true;
+            dgvMisAlertas.RowHeadersVisible = false;
+            dgvMisAlertas.Size = new Size(1013, 317);
+            dgvMisAlertas.TabIndex = 1;
+            dgvMisAlertas.CellClick += dgvMisAlertas_CellClick;
             // 
             // clmTipo
             // 
@@ -144,22 +144,22 @@
             label1.TabIndex = 3;
             label1.Text = "Contenido:";
             // 
-            // FormMisReportes
+            // FormMisAlertas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1037, 517);
             Controls.Add(label1);
             Controls.Add(txtContenido);
-            Controls.Add(dgvMisReportes);
+            Controls.Add(dgvMisAlertas);
             Controls.Add(lblTitulo);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
-            Name = "FormMisReportes";
+            Name = "FormMisAlertas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Consultar Reportes";
-            Load += FormMisReportes_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvMisReportes).EndInit();
+            Text = "Consultar Alertas";
+            Load += FormMisAlertas_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvMisAlertas).EndInit();
             ((System.ComponentModel.ISupportInitialize)sistemaSeguridadBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -169,7 +169,7 @@
 
         private Label lblTitulo;
         private ColumnHeader columnHeader2;
-        private DataGridView dgvMisReportes;
+        private DataGridView dgvMisAlertas;
         private BindingSource sistemaSeguridadBindingSource;
         private DataGridViewTextBoxColumn clmTipo;
         private DataGridViewTextBoxColumn clmDescripcion;

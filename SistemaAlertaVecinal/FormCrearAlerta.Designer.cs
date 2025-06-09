@@ -1,6 +1,6 @@
 ﻿namespace SistemaAlertaVecinal
 {
-    partial class FormReporte
+    partial class FormCrearAlerta
     {
         /// <summary>
         /// Required designer variable.
@@ -45,9 +45,9 @@
             lblTitulo.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.Location = new Point(117, 21);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(243, 22);
+            lblTitulo.Size = new Size(225, 22);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "REPORTE DE INCIDENTE";
+            lblTitulo.Text = "ALERTA DE INCIDENTE";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblTipo
@@ -128,7 +128,7 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // FormReporte
+            // FormAlerta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -144,9 +144,9 @@
             Controls.Add(lblTitulo);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
-            Name = "FormReporte";
+            Name = "FormAlerta";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Reportar Incidente de Seguridad";
+            Text = "Alertar Incidente de Seguridad";
             ResumeLayout(false);
             PerformLayout();
         }

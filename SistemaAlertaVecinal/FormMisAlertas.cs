@@ -2,20 +2,20 @@
 
 namespace SistemaAlertaVecinal
 {
-    public partial class FormMisReportes : Form
+    public partial class FormMisAlertas : Form
     {
-        public FormMisReportes()
+        public FormMisAlertas()
         {
             InitializeComponent();
         }
 
-        private void FormMisReportes_Load(object sender, EventArgs e)
+        private void FormMisAlertas_Load(object sender, EventArgs e)
         {
-            List<Alerta> misReportes = SistemaSeguridad.ObtenerMisReportes();
+            List<Alerta> misReportes = SistemaSeguridad.ObtenerMisAlertas();
             foreach (var reporte in misReportes)
             {
                 ListViewItem item = new ListViewItem(reporte.Tipo);
-                dgvMisReportes.Rows.Add(
+                dgvMisAlertas.Rows.Add(
                     reporte.Tipo,
                     reporte.Descripcion,
                     reporte.Direccion,
@@ -25,12 +25,11 @@ namespace SistemaAlertaVecinal
                 );
             }
         }
-
-        private void dgvMisReportes_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvMisAlertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                object valor = dgvMisReportes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                object valor = dgvMisAlertas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 txtContenido.Text = valor.ToString();
             }
         }

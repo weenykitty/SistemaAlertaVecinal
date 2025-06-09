@@ -30,7 +30,7 @@
         {
             label1 = new Label();
             txtContenido = new TextBox();
-            dgvMisReportes = new DataGridView();
+            dgvAlertasVecinos = new DataGridView();
             clmTipo = new DataGridViewTextBoxColumn();
             clmDescripcion = new DataGridViewTextBoxColumn();
             clmDireccion = new DataGridViewTextBoxColumn();
@@ -38,7 +38,7 @@
             clmReportadoPor = new DataGridViewTextBoxColumn();
             clmZona = new DataGridViewTextBoxColumn();
             lblTitulo = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvMisReportes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAlertasVecinos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -60,22 +60,22 @@
             txtContenido.Size = new Size(1013, 98);
             txtContenido.TabIndex = 6;
             // 
-            // dgvMisReportes
+            // dgvAlertasVecinos
             // 
-            dgvMisReportes.AllowUserToAddRows = false;
-            dgvMisReportes.AllowUserToDeleteRows = false;
-            dgvMisReportes.AllowUserToResizeColumns = false;
-            dgvMisReportes.AllowUserToResizeRows = false;
-            dgvMisReportes.BackgroundColor = Color.White;
-            dgvMisReportes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMisReportes.Columns.AddRange(new DataGridViewColumn[] { clmTipo, clmDescripcion, clmDireccion, clmFecha, clmReportadoPor, clmZona });
-            dgvMisReportes.Location = new Point(12, 60);
-            dgvMisReportes.Name = "dgvMisReportes";
-            dgvMisReportes.ReadOnly = true;
-            dgvMisReportes.RowHeadersVisible = false;
-            dgvMisReportes.Size = new Size(1013, 317);
-            dgvMisReportes.TabIndex = 5;
-            dgvMisReportes.CellClick += dgvMisReportes_CellClick;
+            dgvAlertasVecinos.AllowUserToAddRows = false;
+            dgvAlertasVecinos.AllowUserToDeleteRows = false;
+            dgvAlertasVecinos.AllowUserToResizeColumns = false;
+            dgvAlertasVecinos.AllowUserToResizeRows = false;
+            dgvAlertasVecinos.BackgroundColor = Color.White;
+            dgvAlertasVecinos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAlertasVecinos.Columns.AddRange(new DataGridViewColumn[] { clmTipo, clmDescripcion, clmDireccion, clmFecha, clmReportadoPor, clmZona });
+            dgvAlertasVecinos.Location = new Point(12, 60);
+            dgvAlertasVecinos.Name = "dgvAlertasVecinos";
+            dgvAlertasVecinos.ReadOnly = true;
+            dgvAlertasVecinos.RowHeadersVisible = false;
+            dgvAlertasVecinos.Size = new Size(1013, 317);
+            dgvAlertasVecinos.TabIndex = 5;
+            dgvAlertasVecinos.CellClick += dgvAlertasVecinos_CellClick;
             // 
             // clmTipo
             // 
@@ -144,12 +144,15 @@
             ClientSize = new Size(1037, 517);
             Controls.Add(label1);
             Controls.Add(txtContenido);
-            Controls.Add(dgvMisReportes);
+            Controls.Add(dgvAlertasVecinos);
             Controls.Add(lblTitulo);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "FormAlertas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Alertas en mi Zona";
             Load += FormAlertas_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvMisReportes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAlertasVecinos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -158,7 +161,7 @@
 
         private Label label1;
         private TextBox txtContenido;
-        private DataGridView dgvMisReportes;
+        private DataGridView dgvAlertasVecinos;
         private DataGridViewTextBoxColumn clmTipo;
         private DataGridViewTextBoxColumn clmDescripcion;
         private DataGridViewTextBoxColumn clmDireccion;

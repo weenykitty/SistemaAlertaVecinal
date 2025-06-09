@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3061CEE8-65FD-41BB-96CA-651E390DD14F}|SistemaAlertaVecinal\\SistemaAlertaVecinal.csproj|c:\\users\\usuario\\documents\\repos\\sistemaalertavecinal\\sistemaalertavecinal\\formmisreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3061CEE8-65FD-41BB-96CA-651E390DD14F}|SistemaAlertaVecinal\\SistemaAlertaVecinal.csproj|solutionrelative:sistemaalertavecinal\\formmisreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3061CEE8-65FD-41BB-96CA-651E390DD14F}|SistemaAlertaVecinal\\SistemaAlertaVecinal.csproj|c:\\users\\usuario\\documents\\repos\\sistemaalertavecinal\\sistemaalertavecinal\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3061CEE8-65FD-41BB-96CA-651E390DD14F}|SistemaAlertaVecinal\\SistemaAlertaVecinal.csproj|solutionrelative:sistemaalertavecinal\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3061CEE8-65FD-41BB-96CA-651E390DD14F}|SistemaAlertaVecinal\\SistemaAlertaVecinal.csproj|c:\\users\\usuario\\documents\\repos\\sistemaalertavecinal\\sistemaalertavecinal\\clases\\sistemaseguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3061CEE8-65FD-41BB-96CA-651E390DD14F}|SistemaAlertaVecinal\\SistemaAlertaVecinal.csproj|solutionrelative:sistemaalertavecinal\\clases\\sistemaseguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3061CEE8-65FD-41BB-96CA-651E390DD14F}|SistemaAlertaVecinal\\SistemaAlertaVecinal.csproj|c:\\users\\usuario\\documents\\repos\\sistemaalertavecinal\\sistemaalertavecinal\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3061CEE8-65FD-41BB-96CA-651E390DD14F}|SistemaAlertaVecinal\\SistemaAlertaVecinal.csproj|solutionrelative:sistemaalertavecinal\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormMisReportes.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\FormMisReportes.cs",
-              "RelativeDocumentMoniker": "SistemaAlertaVecinal\\FormMisReportes.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\FormMisReportes.cs",
-              "RelativeToolTip": "SistemaAlertaVecinal\\FormMisReportes.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAfAAAAAAAAAA==",
+              "Title": "FormPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\FormPrincipal.cs",
+              "RelativeDocumentMoniker": "SistemaAlertaVecinal\\FormPrincipal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\FormPrincipal.cs",
+              "RelativeToolTip": "SistemaAlertaVecinal\\FormPrincipal.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T21:08:41.888Z",
+              "WhenOpened": "2025-06-09T17:53:21.244Z",
               "EditorCaption": ""
             },
             {
@@ -43,30 +39,11 @@
               "Title": "SistemaSeguridad.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\Clases\\SistemaSeguridad.cs",
               "RelativeDocumentMoniker": "SistemaAlertaVecinal\\Clases\\SistemaSeguridad.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\Clases\\SistemaSeguridad.cs*",
-              "RelativeToolTip": "SistemaAlertaVecinal\\Clases\\SistemaSeguridad.cs*",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAqwHIAAAANAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\Clases\\SistemaSeguridad.cs",
+              "RelativeToolTip": "SistemaAlertaVecinal\\Clases\\SistemaSeguridad.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T01:02:26.671Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 443,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\FormPrincipal.cs",
-              "RelativeDocumentMoniker": "SistemaAlertaVecinal\\FormPrincipal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Repos\\SistemaAlertaVecinal\\SistemaAlertaVecinal\\FormPrincipal.cs*",
-              "RelativeToolTip": "SistemaAlertaVecinal\\FormPrincipal.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T21:01:35.931Z",
+              "WhenOpened": "2025-06-09T17:30:39.403Z",
               "EditorCaption": ""
             }
           ]

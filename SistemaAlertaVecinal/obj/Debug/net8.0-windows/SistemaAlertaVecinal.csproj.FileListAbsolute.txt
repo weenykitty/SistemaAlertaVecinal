@@ -18,5 +18,5 @@ C:\Users\Usuario\Documents\Repos\SistemaAlertaVecinal\SistemaAlertaVecinal\obj\D
 C:\Users\Usuario\Documents\Repos\SistemaAlertaVecinal\SistemaAlertaVecinal\obj\Debug\net8.0-windows\SistemaAlertaVecinal.genruntimeconfig.cache
 C:\Users\Usuario\Documents\Repos\SistemaAlertaVecinal\SistemaAlertaVecinal\obj\Debug\net8.0-windows\ref\SistemaAlertaVecinal.dll
 C:\Users\Usuario\Documents\Repos\SistemaAlertaVecinal\SistemaAlertaVecinal\obj\Debug\net8.0-windows\SistemaAlertaVecinal.FormAlertas.resources
-C:\Users\Usuario\Documents\Repos\SistemaAlertaVecinal\SistemaAlertaVecinal\obj\Debug\net8.0-windows\SistemaAlertaVecinal.FormMisReportes.resources
-C:\Users\Usuario\Documents\Repos\SistemaAlertaVecinal\SistemaAlertaVecinal\obj\Debug\net8.0-windows\SistemaAlertaVecinal.FormReporte.resources
+C:\Users\Usuario\Documents\Repos\SistemaAlertaVecinal\SistemaAlertaVecinal\obj\Debug\net8.0-windows\SistemaAlertaVecinal.FormMisAlertas.resources
+C:\Users\Usuario\Documents\Repos\SistemaAlertaVecinal\SistemaAlertaVecinal\obj\Debug\net8.0-windows\SistemaAlertaVecinal.FormCrearAlerta.resources

@@ -18,8 +18,8 @@ namespace SistemaAlertaVecinal
 
         private void btnReportarEmergencia_Click(object sender, EventArgs e)
         {
-            FormReporte formReporte = new FormReporte();
-            formReporte.ShowDialog();
+            FormCrearAlerta formCrearAlerta = new FormCrearAlerta();
+            formCrearAlerta.ShowDialog();
         }
 
         private void btnVerAlertas_Click(object sender, EventArgs e)
@@ -27,16 +27,16 @@ namespace SistemaAlertaVecinal
             FormAlertas formAlertas = new FormAlertas();
             formAlertas.ShowDialog();
         }
-
-        private void btnMisReportes_Click(object sender, EventArgs e)
+        private void btnMisAlertas_Click(object sender, EventArgs e)
         {
-            FormMisReportes formMisReportes = new FormMisReportes();
-            formMisReportes.ShowDialog();
+            FormMisAlertas formMisAlertas = new FormMisAlertas();
+            formMisAlertas.ShowDialog();
         }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             SistemaSeguridad.usuarioActual = null;
             this.Close();
         }
+
     }
 }

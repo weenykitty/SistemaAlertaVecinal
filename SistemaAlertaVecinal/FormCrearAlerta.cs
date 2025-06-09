@@ -2,9 +2,9 @@
 
 namespace SistemaAlertaVecinal
 {
-    public partial class FormReporte : Form
+    public partial class FormCrearAlerta : Form
     {
-        public FormReporte()
+        public FormCrearAlerta()
         {
             InitializeComponent();
         }
@@ -51,7 +51,7 @@ namespace SistemaAlertaVecinal
             };
             if (ValidarFormulario(formulario))
             {
-                SistemaSeguridad.CrearReporte(formulario);
+                SistemaSeguridad.CrearAlerta(formulario);
                 MessageBox.Show("Reporte enviado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CerrarFormulario();
             }

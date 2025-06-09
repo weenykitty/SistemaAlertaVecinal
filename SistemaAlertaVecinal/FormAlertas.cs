@@ -15,7 +15,7 @@ namespace SistemaAlertaVecinal
             foreach (var alerta in alertas)
             {
                 ListViewItem item = new ListViewItem(alerta.Tipo);
-                dgvMisReportes.Rows.Add(
+                dgvAlertasVecinos.Rows.Add(
                     alerta.Tipo,
                     alerta.Descripcion,
                     alerta.Direccion,
@@ -26,11 +26,11 @@ namespace SistemaAlertaVecinal
             }
         }
 
-        private void dgvMisReportes_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvAlertasVecinos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                object valor = dgvMisReportes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                object valor = dgvAlertasVecinos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 txtContenido.Text = valor?.ToString() ?? "";
             }
         }

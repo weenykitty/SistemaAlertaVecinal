@@ -7,7 +7,7 @@
     <Compile Update="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormMisReportes.cs">
+    <Compile Update="FormMisAlertas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormPrincipal.cs">
@@ -16,7 +16,7 @@
     <Compile Update="FormRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormReporte.cs">
+    <Compile Update="FormCrearAlerta.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

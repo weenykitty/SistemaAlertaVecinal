@@ -32,7 +32,7 @@
             lblZona = new Label();
             btnReportarEmergencia = new Button();
             btnVerAlertas = new Button();
-            btnMisReportes = new Button();
+            btnMisAlertas = new Button();
             btnCerrarSesion = new Button();
             SuspendLayout();
             // 
@@ -83,17 +83,17 @@
             btnVerAlertas.UseVisualStyleBackColor = false;
             btnVerAlertas.Click += btnVerAlertas_Click;
             // 
-            // btnMisReportes
+            // btnMisAlertas
             // 
-            btnMisReportes.BackColor = Color.RoyalBlue;
-            btnMisReportes.ForeColor = Color.White;
-            btnMisReportes.Location = new Point(244, 218);
-            btnMisReportes.Name = "btnMisReportes";
-            btnMisReportes.Size = new Size(228, 53);
-            btnMisReportes.TabIndex = 4;
-            btnMisReportes.Text = "MIS REPORTES";
-            btnMisReportes.UseVisualStyleBackColor = false;
-            btnMisReportes.Click += btnMisReportes_Click;
+            btnMisAlertas.BackColor = Color.RoyalBlue;
+            btnMisAlertas.ForeColor = Color.White;
+            btnMisAlertas.Location = new Point(244, 218);
+            btnMisAlertas.Name = "btnMisAlertas";
+            btnMisAlertas.Size = new Size(228, 53);
+            btnMisAlertas.TabIndex = 4;
+            btnMisAlertas.Text = "MIS ALERTAS";
+            btnMisAlertas.UseVisualStyleBackColor = false;
+            btnMisAlertas.Click += btnMisAlertas_Click;
             // 
             // btnCerrarSesion
             // 
@@ -113,7 +113,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 361);
             Controls.Add(btnCerrarSesion);
-            Controls.Add(btnMisReportes);
+            Controls.Add(btnMisAlertas);
             Controls.Add(btnVerAlertas);
             Controls.Add(btnReportarEmergencia);
             Controls.Add(lblZona);
@@ -133,7 +133,7 @@
         private Label lblZona;
         private Button btnReportarEmergencia;
         private Button btnVerAlertas;
-        private Button btnMisReportes;
+        private Button btnMisAlertas;
         private Button btnCerrarSesion;
     }
 }

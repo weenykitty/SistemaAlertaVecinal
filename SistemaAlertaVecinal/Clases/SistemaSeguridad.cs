@@ -4,7 +4,6 @@ namespace SistemaAlertaVecinal.Clases
 {
     public class SistemaSeguridad
     {
-        //Arrays para guardar datos (maximo 50 usuarios, 100 incidentes)
         private static List<Usuario> usuarios = new List<Usuario>();
         private static List<Alerta> alertas = new List<Alerta>();
         public static Usuario? usuarioActual;
@@ -26,7 +25,7 @@ namespace SistemaAlertaVecinal.Clases
             // Usuario Test2
             usuarios.Add(new Usuario
             {
-                DNI = "12345678",
+                DNI = "12345679",
                 Nombre = "Ale Medrano",
                 Direccion = "Jr. Pizarro 123, Centro Histórico",
                 Telefono = "987654321",
@@ -106,8 +105,8 @@ namespace SistemaAlertaVecinal.Clases
         }
 
 
-        //Crear un reporte de incidente
-        public static void CrearReporte(FormularioAlerta formulario)
+        //Crear una alerta de incidente
+        public static void CrearAlerta(FormularioAlerta formulario)
         {
             if (usuarioActual == null)
             {
@@ -146,8 +145,8 @@ namespace SistemaAlertaVecinal.Clases
             return resultados;
         }
 
-        //Obtener reportes del usuario actual
-        public static List<Alerta> ObtenerMisReportes()
+        //Obtener alertas del usuario actual
+        public static List<Alerta> ObtenerMisAlertas()
         {
             if (usuarioActual == null)
             {
