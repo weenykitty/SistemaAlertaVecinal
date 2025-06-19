@@ -134,6 +134,7 @@
             // txtContraseña
             // 
             txtContraseña.Location = new Point(50, 179);
+            txtContraseña.MaxLength = 4;
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '*';
             txtContraseña.Size = new Size(200, 23);

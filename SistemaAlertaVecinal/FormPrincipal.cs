@@ -4,6 +4,8 @@ namespace SistemaAlertaVecinal
 {
     public partial class FormPrincipal : Form
     {
+        public bool CerroSesion { get; private set; } = false;
+
         public FormPrincipal()
         {
             if (SistemaSeguridad.usuarioActual == null)
@@ -34,8 +36,15 @@ namespace SistemaAlertaVecinal
         }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            SistemaSeguridad.usuarioActual = null;
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Está seguro que desea cerrar sesión?",
+                                           "Confirmar", MessageBoxButtons.YesNo,
+                                           MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                SistemaSeguridad.CerrarSesion();
+                CerroSesion = true;
+                this.Close();
+            }
         }
 
     }

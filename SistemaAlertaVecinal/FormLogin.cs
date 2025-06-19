@@ -1,4 +1,5 @@
 using SistemaAlertaVecinal.Clases;
+using System.Net;
 
 namespace SistemaAlertaVecinal
 {
@@ -24,14 +25,8 @@ namespace SistemaAlertaVecinal
             {
                 MessageBox.Show("Bienvenid@ " + SistemaSeguridad.usuarioActual!.Nombre + "!", "Acceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                FormPrincipal formPrincipal = new FormPrincipal();
-                this.Hide();
-                formPrincipal.ShowDialog();
-                this.Show();
-
-                // Limpiar campos
-                txtDNI.Text = "";
-                txtContraseña.Text = "";
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
@@ -44,5 +39,25 @@ namespace SistemaAlertaVecinal
             FormRegistro formRegistro = new FormRegistro();
             formRegistro.ShowDialog();
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            Usuario? usuario = SistemaSeguridad.ObtenerUsuarioActual();
+            if (usuario != null)
+            {
+                if (SistemaSeguridad.ValidarUsuario(usuario.DNI, usuario.Contraseña))
+                {
+                    MessageBox.Show("Bienvenid@ " + SistemaSeguridad.usuarioActual!.Nombre + "!", "Acceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("DNI o contraseña incorrectos", "Error de Acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        
     }
 }

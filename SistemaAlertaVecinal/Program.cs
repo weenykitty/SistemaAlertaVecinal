@@ -7,9 +7,26 @@ namespace SistemaAlertaVecinal
         [STAThread]
         static void Main()
         {
-            ApplicationConfiguration.Initialize();
-            //Crear sistema de seguridad
-            Application.Run(new FormLogin());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            while (true)
+            {
+                FormLogin loginForm = new FormLogin();
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    FormPrincipal formPrincipal = new FormPrincipal();
+                    Application.Run(formPrincipal);
+
+                    // Si el FormPrincipal se cierra voluntariamente (logout)
+                    if (!formPrincipal.CerroSesion)
+                        break; // Si se cerró sin cerrar sesión, salir del bucle y terminar app
+                }
+                else
+                {
+                    break; // El usuario cerró el login sin iniciar sesión
+                }
+            }
         }
     }
 }

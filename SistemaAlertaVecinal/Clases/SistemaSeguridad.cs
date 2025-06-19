@@ -4,36 +4,128 @@ namespace SistemaAlertaVecinal.Clases
 {
     public class SistemaSeguridad
     {
+        private static string archivoLocalUsuarios = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "SistemaAlertaVecinal",
+            "credenciales.txt"
+        );
+
+        private static string archivoLocalAlertas = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "SistemaAlertaVecinal",
+            "alertas.txt"
+        );
+
+        private static string archivoUsuarioActual = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "SistemaAlertaVecinal",
+            "usuarioActual.txt"
+        );
+
         private static List<Usuario> usuarios = new List<Usuario>();
         private static List<Alerta> alertas = new List<Alerta>();
         public static Usuario? usuarioActual;
         static SistemaSeguridad()
         {
-            usuarioActual = null;
-
-            // Usuario Test1
-            usuarios.Add(new Usuario
-            {
-                DNI = "12345678",
-                Nombre = "Juan Pérez",
-                Direccion = "Jr. Pizarro 123, Centro Histórico",
-                Telefono = "987654321",
-                Contraseña = "1234",
-                Zona = "El Porvenir"
-            });
-
-            // Usuario Test2
-            usuarios.Add(new Usuario
-            {
-                DNI = "12345679",
-                Nombre = "Ale Medrano",
-                Direccion = "Jr. Pizarro 123, Centro Histórico",
-                Telefono = "987654321",
-                Contraseña = "1235",
-                Zona = "El Porvenir"
-            });
+            CargarDatosUsuarios();
+            CargarDatosAlertas();
+            CargarUsuarioActual();
         }
 
+        //Carga los datos del usuario actual desde un archivo de texto
+        public static void CargarUsuarioActual()
+        {
+            try
+            {
+                if (File.Exists(archivoUsuarioActual))
+                {
+                    using (StreamReader reader = new StreamReader(archivoUsuarioActual))
+                    {
+                        string? linea = reader.ReadLine();
+                        if (linea != null)
+                        {
+                            string[] partes = linea.Split('|');
+                            if (partes.Length == 6)
+                            {
+                                usuarioActual = new Usuario
+                                {
+                                    DNI = partes[0],
+                                    Nombre = partes[1],
+                                    Direccion = partes[2],
+                                    Telefono = partes[3],
+                                    Contraseña = partes[4],
+                                    Zona = partes[5]
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar el usuario actual: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Lee cada usuario del archivo de texto y lo carga en la lista de usuarios
+        public static void CargarDatosUsuarios()
+        {
+            try
+            {
+                if (File.Exists(archivoLocalUsuarios))
+                {
+                    using (StreamReader reader = new StreamReader(archivoLocalUsuarios))
+                    {
+                        string linea;
+                        while ((linea = reader.ReadLine()) != null)
+                        {
+                            string[] partes = linea.Split('|');
+                            if (partes.Length == 6)
+                            {
+                                usuarios.Add(new Usuario
+                                {
+                                    DNI = partes[0],
+                                    Nombre = partes[1],
+                                    Direccion = partes[2],
+                                    Telefono = partes[3],
+                                    Contraseña = partes[4],
+                                    Zona = partes[5]
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los datos de los usuarios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Guarda el usuario actual en un archivo de texto para persistencia
+        public static void GuardarUsuarioActual()
+        {
+            try
+            {
+                string? directorio = Path.GetDirectoryName(archivoUsuarioActual);
+                if (!string.IsNullOrEmpty(directorio) && !Directory.Exists(directorio))
+                {
+                    Directory.CreateDirectory(directorio);
+                }
+                using (StreamWriter writer = new StreamWriter(archivoUsuarioActual, false))
+                {
+                    if (usuarioActual != null)
+                    {
+                        string linea = $"{usuarioActual.DNI}|{usuarioActual.Nombre}|{usuarioActual.Direccion}|{usuarioActual.Telefono}|{usuarioActual.Contraseña}|{usuarioActual.Zona}";
+                        writer.WriteLine(linea);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar el usuario actual: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         //Valida si existe un usuario y si la cotnraseña es correcta
         public static bool ValidarUsuario(string dni, string contraseña)
@@ -42,11 +134,42 @@ namespace SistemaAlertaVecinal.Clases
             {
                 if (usuario.DNI == dni && usuario.Contraseña == contraseña)
                 {
-                    usuarioActual = usuario; 
+                    usuarioActual = usuario;
+                    GuardarUsuarioActual(); 
                     return true; 
                 }
             }
             return false;
+        }
+
+        public static Usuario? ObtenerUsuarioActual()
+        {
+            return usuarioActual;
+        }
+
+        //Guarda los datos de un usuario en un archivo de texto para persistencia
+        public static void GuardarDatosUsuarios()
+        {
+            try
+            {
+                string? directorio = Path.GetDirectoryName(archivoLocalUsuarios);
+                if (!string.IsNullOrEmpty(directorio) && !Directory.Exists(directorio))
+                {
+                    Directory.CreateDirectory(directorio);
+                }
+                using (StreamWriter writer = new StreamWriter(archivoLocalUsuarios, false))
+                {
+                    foreach (Usuario usuario in usuarios)
+                    {
+                        string linea = $"{usuario.DNI}|{usuario.Nombre}|{usuario.Direccion}|{usuario.Telefono}|{usuario.Contraseña}|{usuario.Zona}";
+                        writer.WriteLine(linea);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar los datos de los usuarios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Registra un nuevo usuario en el sistema
@@ -73,9 +196,34 @@ namespace SistemaAlertaVecinal.Clases
                     Contraseña = contraseña,
                     Zona = zona
                 });
+                GuardarDatosUsuarios();
                 return true;
             }
             return false; 
+        }
+
+
+        //Limpia el archivo de usuario actual para eliminar la sesión
+        public static void EliminarUsuarioActual()
+        {
+            try
+            {
+                if (File.Exists(archivoUsuarioActual))
+                {
+                    File.Delete(archivoUsuarioActual);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar el usuario actual: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Cerrar sesión del usuario actual
+        public static void CerrarSesion()
+        {
+            usuarioActual = null;
+            EliminarUsuarioActual();
         }
 
         public static string DeterminarZona(string direccion)
@@ -104,6 +252,65 @@ namespace SistemaAlertaVecinal.Clases
             }
         }
 
+        //Guarda los datos de las alertas en un archivo de texto para persistencia
+        public static void GuardarDatosAlertas()
+        {
+            try
+            {
+                string? directorio = Path.GetDirectoryName(archivoLocalAlertas);
+                if (!string.IsNullOrEmpty(directorio) && !Directory.Exists(directorio))
+                {
+                    Directory.CreateDirectory(directorio);
+                }
+                using (StreamWriter writer = new StreamWriter(archivoLocalAlertas, false))
+                {
+                    foreach (Alerta alerta in alertas)
+                    {
+                        string linea = $"{alerta.Tipo}|{alerta.Descripcion}|{alerta.Direccion}|{alerta.ReportadoPor}|{alerta.Zona}|{alerta.Fecha}";
+                        writer.WriteLine(linea);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar los datos de las alertas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Lee cada alerta del archivo de texto y lo carga en la lista de alertas
+        public static void CargarDatosAlertas()
+        {
+            try
+            {
+                if (File.Exists(archivoLocalAlertas))
+                {
+                    using (StreamReader reader = new StreamReader(archivoLocalAlertas))
+                    {
+                        string linea;
+                        while ((linea = reader.ReadLine()) != null)
+                        {
+                            string[] partes = linea.Split('|');
+                            if (partes.Length == 6)
+                            {
+                                alertas.Add(new Alerta
+                                {
+                                    Tipo = partes[0],
+                                    Descripcion = partes[1],
+                                    Direccion = partes[2],
+                                    ReportadoPor = partes[3],
+                                    Zona = partes[4],
+                                    Fecha = DateTime.Parse(partes[5])
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los datos de las alertas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         //Crear una alerta de incidente
         public static void CrearAlerta(FormularioAlerta formulario)
@@ -122,6 +329,7 @@ namespace SistemaAlertaVecinal.Clases
                     ReportadoPor = usuarioActual.DNI,
                     Zona = usuarioActual.Zona,
                 });
+                GuardarDatosAlertas();
                 return;
             }
             MessageBox.Show("No se pueden registrar más incidentes, el sistema está lleno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

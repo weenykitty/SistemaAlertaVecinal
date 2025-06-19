@@ -77,7 +77,9 @@
             // txtContraseña
             // 
             txtContraseña.Location = new Point(50, 150);
+            txtContraseña.MaxLength = 4;
             txtContraseña.Name = "txtContraseña";
+            txtContraseña.PasswordChar = '*';
             txtContraseña.Size = new Size(200, 23);
             txtContraseña.TabIndex = 4;
             // 
@@ -120,6 +122,7 @@
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Alerta Vecinal - Trujillo";
+            Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();
 
