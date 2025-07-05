@@ -225,32 +225,6 @@ namespace SistemaAlertaVecinal.Clases
             EliminarUsuarioActual();
         }
 
-        public static string DeterminarZona(string direccion)
-        {
-            string dir = direccion.ToLower();
-
-            switch (true)
-            {
-                case var _ when dir.Contains("centro histórico"):
-                    return "Centro Histórico";
-
-                case var _ when dir.Contains("la esperanza"):
-                    return "La Esperanza";
-
-                case var _ when dir.Contains("el porvenir"):
-                    return "El Porvenir";
-
-                case var _ when dir.Contains("florencia de mora"):
-                    return "Florencia de Mora";
-
-                case var _ when dir.Contains("victor larco herrera"):
-                    return "Victor Larco Herrera";
-
-                default:
-                    return "";
-            }
-        }
-
         //Guarda los datos de las alertas en un archivo de texto para persistencia
         public static void GuardarDatosAlertas()
         {
