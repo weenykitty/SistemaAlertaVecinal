@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaAlertaVecinal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aecb7c31c6827b507622ffec1390782ee0791a9d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f39e1ceac8f8aa2f1ffd88b2f96a891c88a91bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaAlertaVecinal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaAlertaVecinal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

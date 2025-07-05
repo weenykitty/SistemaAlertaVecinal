@@ -76,7 +76,7 @@ namespace SistemaAlertaVecinal.Clases
                 {
                     using (StreamReader reader = new StreamReader(archivoLocalUsuarios))
                     {
-                        string linea;
+                        string? linea;
                         while ((linea = reader.ReadLine()) != null)
                         {
                             string[] partes = linea.Split('|');
@@ -147,7 +147,7 @@ namespace SistemaAlertaVecinal.Clases
             return usuarioActual;
         }
 
-        //Guarda los datos de un usuario en un archivo de texto para persistencia
+        //Guarde los datos de un usuario en un archivo de texto para persistencia
         public static void GuardarDatosUsuarios()
         {
             try
@@ -219,7 +219,6 @@ namespace SistemaAlertaVecinal.Clases
             }
         }
 
-        //Cerrar sesión del usuario actual
         public static void CerrarSesion()
         {
             usuarioActual = null;
@@ -286,7 +285,7 @@ namespace SistemaAlertaVecinal.Clases
                 {
                     using (StreamReader reader = new StreamReader(archivoLocalAlertas))
                     {
-                        string linea;
+                        string? linea;
                         while ((linea = reader.ReadLine()) != null)
                         {
                             string[] partes = linea.Split('|');
